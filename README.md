@@ -26,4 +26,8 @@ The quantum Haar wavelet is a quantum state that shares similarities with the cl
 
 ![QHW circuit](https://github.com/Next-di-mension/qnn-qhw/assets/98448938/b2d3c1bd-3ad6-41ee-a82d-eeaf087e6c01)
 
+The convolutions generated of the sample image is given below: 
+
+![non_oral_can_conv_img (1)](https://github.com/Next-di-mension/qnn-qhw/assets/98448938/ef4eff8f-168f-4b81-aa38-171acae47502)
+
 
