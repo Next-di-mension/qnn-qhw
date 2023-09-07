@@ -10,7 +10,7 @@ Clone the repo:
 ```
  git clone https://github.com/Next-di-mension/qnn-qhw.git &&bcd qnn-qhw
 ```
-The `PyTorch-Quantum` module requires the older version of qiskit, therefore, activate the `.venv` environment which contains all the necessary modules.
+The `PyTorch-Quantum` module requires the older version of qiskit, therefore, create and activate the new `.venv` environment which contains all the necessary modules along with `PyTorch-Quantum`.
 ```
  conda activate .venv
 ```
