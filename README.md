@@ -10,9 +10,12 @@ Clone the repo:
 ```
  git clone https://github.com/Next-di-mension/qnn-qhw.git &&bcd qnn-qhw
 ```
-The `PyTorch-Quantum` module requires the older version of qiskit, therefore, create and activate the new `.venv` environment which contains all the necessary modules along with `PyTorch-Quantum`.
+The `PyTorch-Quantum` module requires the older version of qiskit, therefore, create and activate the new `.venv` environment which contains all the necessary modules along with `PyTorch-Quantum` using `requirement.txt`.
 ```
- conda activate .venv
+virtualenv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
 ```
 # Running the code 
 Run `hcnn_modified.py` file to train and test the model. The labels for corresponding train and test data are in `labels.csv`. Specify the path to this file before setting the model to train. 
