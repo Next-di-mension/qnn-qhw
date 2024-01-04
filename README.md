@@ -1,35 +1,65 @@
-# Hybrid Quantum-Classical Neural Network using Haar Wavelet for Feature Extraction 
-This repository contains a code for implementing an integrated Haar-Quanvolutional Neural Network on the Oral Cancer dataset.
+# Hybrid Quantum-Classical Neural Network using Haar Wavelet for Feature Extraction
 
-The code relies on the `Pytorch-Quantum` Library. The data needs to be downloaded separately from: [A histopathological image repository of normal epithelium of Oral Cavity and Oral Squamous Cell Carcinoma](https://data.mendeley.com/datasets/ftmp4cvtmb/1)  
+This repository presents an innovative approach to integrating a Haar-Quanvolutional Neural Network with the Oral Cancer dataset, leveraging the PyTorch-Quantum Library for its implementation.
 
-# Installation
+## Repository Structure
+```
+.
+├── data
+├── Images
+├── hcnn.py
+├── hcnn_cross_fold.py
+├── LICENSE
+├── kernel.py
+├── labels.csv
+├── requirements.txt
+├── results.yml
+├── README.md
 
-## Cloning and handling dependencies 
-Clone the repo:
 ```
- git clone https://github.com/Next-di-mension/qnn-qhw.git &&bcd qnn-qhw
+
+## Data Source
+
+The Oral Cancer dataset is essential for this project and needs to be downloaded separately from: [A histopathological image repository of normal epithelium of Oral Cavity and Oral Squamous Cell Carcinoma](https://data.mendeley.com/datasets/ftmp4cvtmb/1).
+
+## Installation
+
+### Cloning and Handling Dependencies
+
+First, clone the repository:
+
+```bash
+git clone https://github.com/Next-di-mension/qnn-qhw.git && cd qnn-qhw
 ```
-The `PyTorch-Quantum` module requires the older version of qiskit, therefore, create and activate the new `.venv` environment which contains all the necessary modules along with `PyTorch-Quantum` using `requirement.txt`.
-```
+
+Due to specific version requirements for the `PyTorch-Quantum` module, it's recommended to create a new virtual environment:
+
+```bash
 virtualenv venv
 source venv/bin/activate
 pip install -r requirements.txt
-
 ```
-# Running the code 
-Run `hcnn.py` for pytorch implementation to train and test the model or `hcnn_cross_fold` for TensorFlow implementation. The labels for corresponding train and test data are in `labels.csv`. Specify the path to this file before setting the model to train. 
 
-# Overview of the work 
-This proposed model is a hybrid model. It consists of two sections: a quanvolutional filter part and then a classical layer part. First, we create a quanvolutional filter. a transformational layer called a ”quanvolutional layer,” which operates on input data by locally transforming the data using random quantum circuits, similar to the transformations performed by random convolutional filter layers. Quanvolutional layers apply random quantum circuits to input data, enabling local transformations and feature extraction.
+## Running the Code
 
+- Use `hcnn.py` for the PyTorch implementation to train and test the model.
+- Use `hcnn_cross_fold.py` for the TensorFlow implementation.
+- Before training, specify the path to the `labels.csv` file which contains labels for the train and test data.
+
+## Model Overview
 ![QNN](https://github.com/Next-di-mension/qnn-qhw/assets/98448938/86de7b81-1f94-4635-8c15-566e00fbff36)
 
-The quantum Haar wavelet is a quantum state that shares similarities with the classical Haar wavelet. It is localized both in the time and energy domains, allowing for the analysis of quantum states at different energy scales. By decomposing a quantum state into quantum Haar wavelet coefficients, it is possible to extract information about its energy distribution at different scales. In the quantum domain, the input vector is the multi-qubit state with a $2^n$ dimension. Where $n$ is the number of qubits. To describe the QHWT effectively with quantum circuits, there are two main elements that need to be considered. first is Hadamard gate and second is the permutation matrix $\Pi_{2^n}$ applied to $n$ qubit quantum register.
+The proposed model is a hybrid, consisting of a quanvolutional filter and classical layer sections. The quanvolutional filter uses random quantum circuits, similar to convolutional filters in classical neural networks, for local data transformation and feature extraction.
+
+### Quantum Haar Wavelet
+
+The quantum Haar wavelet (QHW) is a state localized in both time and energy domains, suitable for analyzing quantum states at various energy scales. The QHWT decomposes a quantum state into coefficients, revealing its energy distribution. The effective description of QHWT in quantum circuits involves Hadamard gates and a permutation matrix $\Pi_{2^n}$ applied to an $n$ qubit quantum register.
 
 ![QHW circuit](https://github.com/Next-di-mension/qnn-qhw/assets/98448938/b2d3c1bd-3ad6-41ee-a82d-eeaf087e6c01)
 
-The convolutions generated of the sample image is given below: 
+## Sample Images
+
+Sample convolutions generated from the model are shown below:
 
 ![non_oral_can_conv_img (1)](https://github.com/Next-di-mension/qnn-qhw/assets/98448938/ef4eff8f-168f-4b81-aa38-171acae47502)
 
