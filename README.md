@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 ```
 # Running the code 
-Run `hcnn_modified.py` file to train and test the model. The labels for corresponding train and test data are in `labels.csv`. Specify the path to this file before setting the model to train. 
+Run `hcnn.py` for pytorch implementation to train and test the model or `hcnn_cross_fold` for TensorFlow implementation. The labels for corresponding train and test data are in `labels.csv`. Specify the path to this file before setting the model to train. 
 
 # Overview of the work 
 This proposed model is a hybrid model. It consists of two sections: a quanvolutional filter part and then a classical layer part. First, we create a quanvolutional filter. a transformational layer called a ”quanvolutional layer,” which operates on input data by locally transforming the data using random quantum circuits, similar to the transformations performed by random convolutional filter layers. Quanvolutional layers apply random quantum circuits to input data, enabling local transformations and feature extraction.
